@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+  box-shadow: 1px 5px 20px -3px rgba(0, 0, 0, 0.207);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo p {
+  color: #fd4c28;
+  font-size: 30px;
+  font-weight: 700;
+}
+input {
+  width: 25rem;
+  padding: 15px;
+  margin-left: 10px;
+  border: 1px solid #ff7c35;
+  border-radius: 75px;
+  font-size: 20px;
+}
+
+.nav-login {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+/* login button */
+.nav-login button {
+  width: 157px;
+  height: 58px;
+  outline: none;
+  border: 1px solid #7a7a7a;
+  border-radius: 75px;
+  color: #515151;
+  font-size: 20px;
+  font-weight: 500;
+  background: white;
+  cursor: pointer;
+}
+.nav-login button:active {
+  background: #f3f3f3;
+}
