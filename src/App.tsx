@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header/Header";
-import RecipeList from "./Components/RecipeList/RecipeList";
+// import RecipeList from "./Components/RecipeList/RecipeList";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-        <RecipeList />
+        {/* <RecipeList /> */}
         <RecipeDetail />
 
         <Routes></Routes>

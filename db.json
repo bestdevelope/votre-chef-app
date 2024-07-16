@@ -12,22 +12,22 @@
       "time": 30,
       "number-servings": 4,
       "favorites": "",
-      "ingredients": [
+      "ingredients": [  
         "Pasta",
         "Bolognese sauce",
         "Marinara sauce",
         "Basil leaves",
         "Parmesan cheese"
-      ],
+        ] ,
       "description": "A classic Italian dish made with pasta and tomato sauce, accompanied by a tangy Bolognese sauce and fresh basil leaves.",
-      "instructions": [
+      "instructions": [  
         "1-Tailler le lard en petits dès.",
         "2-Faire revenir le lard avec les légumes dans l'huile d'olive.",
         "3-Ajouter la viande de boeuf.",
         "4-Dès que la viande est bien colorée ajouter le vin rouge.",
         "5-Laisser évaporer le vin et ajouter la purée de tomates et le bouillon de viande.",
         "6-Laisser mijoter sans couvercle 10 minutes avant de servir (soit un peu moins du temps de cuisson des pâtes dans un grand volume d'eau bouillante salée)."
-      ]
+        ] 
     },
 
     {
@@ -42,16 +42,16 @@
       "time": 20,
       "number-servings": 4,
       "favorites": "",
-      "ingredients": [
+      "ingredients": [ 
         "Basil leaves",
         "Pâte brisée",
         "Fromage blanc",
         "Mozzarella",
         "Parmesan cheese",
         "Olive oil"
-      ],
+        ] ,
       "description": "Risotto à la Carbonara est une recette d'entrée de cuisine française revisitée et améliorée. Cette version de risotto est plus élaborée et présente plus de complexité.",
-      "instructions": [
+      "instructions": [ 
         "1-Préparer une grande casserole.",
         "2-Dans cette casserole, mettre l'olive oil et la pur",
         "3-Ajouter le basil leaves et la pâte brisée.",

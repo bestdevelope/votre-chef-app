@@ -17,7 +17,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     if (query.length > 1) {
-      fetch("http://localhost:5000/recipes?q=${query}")
+      fetch("http://localhost:3000/recipes?q=${query}")
         .then((response) => response.json())
         .then((data) => setSuggestions(data));
     } else {
@@ -32,12 +32,16 @@ const Header: React.FC = () => {
         <p>Meilleurs Recettes</p>
 
         {/* input chercher des recettes */}
-        <input
-          type="text"
-          placeholder="Rechercher des recettes..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
+        <form >
+          <input
+            type="text"
+            placeholder="Rechercher des recettes..."
+            autoComplete="On"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <input className="" type="submit" value={"Search"} />
+        </form>
       </div>
       {/* login */}
       <div className="nav-login">
