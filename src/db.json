@@ -9,6 +9,8 @@
       "country": "Italien",
       "difficulty": "Facile",
       "price": "Bon marché",
+      "time": 30,
+      "number-servings": 4,
       "favorites": "",
       "ingredients": [
         "Pasta",
@@ -37,6 +39,8 @@
       "country": "Italien",
       "difficulty": "Moyen",
       "price": "Bon marché",
+      "time": 20,
+      "number-servings": 4,
       "favorites": "",
       "ingredients": [
         "Basil leaves",
