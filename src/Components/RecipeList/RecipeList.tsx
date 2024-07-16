@@ -11,30 +11,58 @@ type Recipe = {
 };
 
 const RecipeList: React.FC = () => {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [category, setCategory] = useState("");
+  const [country, setCountry] = useState("");
 
   useEffect(() => {
-    fetchData();
+    fetch("http://localhost:5000/recipes")
+      .then((response) => response.json())
+      .then((data) => setRecipes(data));
   }, []);
 
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:5000/recipes?q=${query}");
-    const data = await response.json();
-    setRecipes(data.recipes);
-  };
+  const filterRecipes = Recipes.filter(
+    (recipes) =>
+      (recipes.category === category || category === "") &&
+      (recipes.country === country || country === "")
+  );
 
   return (
     <div>
-      {recipes.map((recipe) => {
-        return (
-          <Link to={`/recipe/${recipe.id}`}>
-            <div key={recipe.id}>
-              <h2>{recipe.title}</h2>
+      <div>
+        <label>
+          Catégorie:
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="">Toutes</option>
+            <option value="entrée">Entrées</option>
+            <option value="plat">Plats principaux</option>
+            <option value="dessert">Desserts</option>
+          </select>
+        </label>
+        <label>
+          Cuisine:
+          <select value={country} onChange={(e) => setCountry(e.target.value)}>
+            <option value="">Toutes</option>
+            <option value="France">Française</option>
+            <option value="Italie">Italienne</option>
+            <option value="Asie">Asiatique</option>
+          </select>
+        </label>
+      </div>
+      <div className="recipe-list">
+        {filterRecipes.map((recipe) => (
+          <div key={recipe.id} className="recipe-card">
+            <Link to={`/recipes/${recipe.id}`}>
               <img src={recipe.image} alt={recipe.title} />
-            </div>
-          </Link>
-        );
-      })}
+              <h3>{recipe.title}</h3>
+              <p>{recipe.time}</p>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
