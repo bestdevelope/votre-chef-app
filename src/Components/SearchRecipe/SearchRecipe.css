@@ -1,7 +1,25 @@
-.liste-recipe {
-    width: 80%;
+.container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px;
     padding: 16px;
     gap: 10px;
+}
+
+.liste-recipe {
+    width: 800px;
+    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    margin-top: 50px;
+    gap: 30px;
+    border-radius: 20px;
+
+}
+
+.recipe img{
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 5px 20px -3px rgba(0, 0, 0, 0.207);
 }

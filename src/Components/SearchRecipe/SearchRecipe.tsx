@@ -33,7 +33,7 @@ const SearchRecipe = () => {
   );
 
   return (
-    <div>
+    <div className="container">
       <div className="recipe-list">
         <h2>Recherchez une recette</h2>
         <input
@@ -46,7 +46,7 @@ const SearchRecipe = () => {
         <div className="liste-recipe">
           {filterRecipe.map((recipe) => (
             <Link to={`/recipedetail/${recipe.id}`} key={recipe.id}>
-              <div>
+              <div className="recipe">
                 <h3>{recipe.title}</h3>
                 <img src={recipe.image} alt={recipe.title} width={300} />
                 <RecipeDetail />
