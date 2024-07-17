@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./SearchRecipe.css";
-import RecipeDetail from "../RecipeDetail/RecipeDetail";
 
 interface Recipe {
   id: number;
@@ -9,12 +7,13 @@ interface Recipe {
   image: string;
 }
 
-const SearchRecipe = () => {
+const SearchRecipe = ({ category }) => {
   const API_URL = "http://localhost:3000/recipes";
 
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
+  //fetch db json
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
@@ -26,33 +25,36 @@ const SearchRecipe = () => {
       }
     };
     (async () => await fetchRecipes())();
-  }, []);
+  }, [category]);
 
+  //filter recipe by query : rechercher des recettes
   const filterRecipe = recipes.filter((recipe) =>
     recipe.title.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <div className="container">
-      <div className="recipe-list">
+      <div className="input-search">
         <h2>Recherchez une recette</h2>
-        <input
+        <input 
           type="text"
           placeholder="Rechercher des recettes..."
           autoComplete="On"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
+        {/* affichage list de recipe */}
+
         <div className="liste-recipe">
-          {filterRecipe.map((recipe) => (
-            <Link to={`/recipedetail/${recipe.id}`} key={recipe.id}>
-              <div className="recipe">
-                <h3>{recipe.title}</h3>
+          {filterRecipe.map((recipe) => {
+            return (
+              <div key={recipe.id} className="recipe">
+                <h4>{recipe.title}</h4>
                 <img src={recipe.image} alt={recipe.title} width={300} />
-                <RecipeDetail />
+                <p>Voir plus</p>
               </div>
-            </Link>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

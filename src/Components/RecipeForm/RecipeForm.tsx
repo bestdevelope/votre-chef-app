@@ -1,6 +1,6 @@
 import React from 'react'
 
-const RecipeForm = () => {
+function RecipeForm() {
   return (
     <div>RecipeForm</div>
   )
