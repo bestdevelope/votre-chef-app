@@ -11,13 +11,22 @@ interface Recipe {
 }
 
 const SearchRecipe = () => {
+  const API_URL = "http://localhost:3000/recipes";
+
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/recipes")
-      .then((response) => response.json())
-      .then((data) => setRecipes(data));
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch(API_URL);
+        const listReciptes = await response.json();
+        setRecipes(listReciptes);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    (async () => await fetchRecipes())();
   }, []);
 
   const filterRecipe = recipes.filter((recipe) =>
@@ -42,7 +51,7 @@ const SearchRecipe = () => {
                 <h3>{recipe.title}</h3>
                 <img src={recipe.image} alt={recipe.title} width={300} />
                 <p>{recipe.description}</p>
-                <RecipeDetail/>
+                <RecipeDetail />
               </div>
             </Link>
           ))}
