@@ -1,0 +1,7 @@
+.liste-recipe {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    gap: 10px;
+}

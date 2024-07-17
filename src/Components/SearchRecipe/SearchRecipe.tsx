@@ -7,7 +7,6 @@ interface Recipe {
   id: number;
   title: string;
   image: string;
-  description: string;
 }
 
 const SearchRecipe = () => {
@@ -44,13 +43,12 @@ const SearchRecipe = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <div>
+        <div className="liste-recipe">
           {filterRecipe.map((recipe) => (
             <Link to={`/recipedetail/${recipe.id}`} key={recipe.id}>
               <div>
                 <h3>{recipe.title}</h3>
                 <img src={recipe.image} alt={recipe.title} width={300} />
-                <p>{recipe.description}</p>
                 <RecipeDetail />
               </div>
             </Link>
