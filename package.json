@@ -11,6 +11,7 @@
     "serve:api": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.24.1"

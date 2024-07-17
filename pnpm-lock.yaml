@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@splidejs/react-splide':
+        specifier: ^0.7.12
+        version: 0.7.12
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -446,6 +449,12 @@ packages:
     resolution: {integrity: sha512-yjk2MAkQmoaPYCSu35RLJ62+dz358nE83VfTePJRp8CG7aMg25mEJYpXFiD+NcevhX8LxD5OP5tktPXnXN7GDw==}
     cpu: [x64]
     os: [win32]
+
+  '@splidejs/react-splide@0.7.12':
+    resolution: {integrity: sha512-UfXH+j47jsMc4x5HA/aOwuuHPqn6y9+ZTNYPWDRD8iLKvIVMZlzq2unjUEvyDAU+TTVPZOXkG2Ojeoz0P4AkZw==}
+
+  '@splidejs/splide@4.1.4':
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
 
   '@tinyhttp/accepts@2.2.2':
     resolution: {integrity: sha512-DmngnwOaPgNUGgTpX1UdlNrXaGG6k5rHFzslcYlvSQIg7s0PI6bF86U0fYq3q+yhJhKbnwzFez0wU1lAP+bKvA==}
@@ -1666,6 +1675,12 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.18.1':
     optional: true
+
+  '@splidejs/react-splide@0.7.12':
+    dependencies:
+      '@splidejs/splide': 4.1.4
+
+  '@splidejs/splide@4.1.4': {}
 
   '@tinyhttp/accepts@2.2.2':
     dependencies:
