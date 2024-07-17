@@ -1,0 +1,214 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Pasta Bolognese",
+      "image": "https://assets.afcdn.com/recipe/20130627/5710_w1024h768c1cx1485cy2482cxt0cyt0cxb2500cyb3750.jpg",
+      "username": "Lea",
+      "category": "Entrées",
+      "country": "Italien",
+      "difficulty": "Facile",
+      "price": "Bon marché",
+      "time": 30,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Pasta",
+        "Bolognese sauce",
+        "Marinara sauce",
+        "Basil leaves",
+        "Parmesan cheese"
+      ],
+      "description": "A classic Italian dish made with pasta and tomato sauce, accompanied by a tangy Bolognese sauce and fresh basil leaves.",
+      "instructions": [
+        "1-Tailler le lard en petits dès.",
+        "2-Faire revenir le lard avec les légumes dans l'huile d'olive.",
+        "3-Ajouter la viande de boeuf.",
+        "4-Dès que la viande est bien colorée ajouter le vin rouge.",
+        "5-Laisser évaporer le vin et ajouter la purée de tomates et le bouillon de viande.",
+        "6-Laisser mijoter sans couvercle 10 minutes avant de servir (soit un peu moins du temps de cuisson des pâtes dans un grand volume d'eau bouillante salée)."
+      ]
+    },
+
+    {
+      "id": 2,
+      "title": "Risotto alla Carbonara",
+      "image": "https://images.food52.com/Km1KhykNqtKcucSRV1aMK4xOPLk=/1200x1200/79919997-84c7-445c-bf22-772712ca9dc1--2019-0218_risotto-alla-carbonara_3x2_ty-mecham.jpg",
+      "username": "Jessica",
+      "category": "Plats",
+      "country": "Italien",
+      "difficulty": "Moyen",
+      "price": "Bon marché",
+      "time": 20,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Basil leaves",
+        "Pâte brisée",
+        "Fromage blanc",
+        "Mozzarella",
+        "Parmesan cheese",
+        "Olive oil"
+      ],
+      "description": "Risotto à la Carbonara est une recette d'entrée de cuisine française revisitée et améliorée. Cette version de risotto est plus élaborée et présente plus de complexité.",
+      "instructions": [
+        "1-Préparer une grande casserole.",
+        "2-Dans cette casserole, mettre l'olive oil et la pur",
+        "3-Ajouter le basil leaves et la pâte brisée.",
+        "4-Poursuivre avec la mozzarella, le fromage blanc et le parmesan cheese.",
+        "5-Ajouter le risotto concentré et faire cuire à feu moyen pendant 20 minutes.",
+        "6-Servir avec des croissants ou des éclairs de fraises."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pizza Margherita",
+      "image": "https://fr.ooni.com/cdn/shop/articles/Margherita-9920.jpg?crop=center&height=800&v=1644590066&width=800",
+      "username": "Pier",
+      "category": "Plats",
+      "country": "Italien",
+      "difficulty": "Facile",
+      "price": "Bon marché",
+      "time": 15,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Mozzarella",
+        "Tomato sauce",
+        "Basil leaves",
+        "Pineapple juice",
+        "Olive oil",
+        "Flour",
+        "Cornstarch",
+        "Eggs",
+        "Parmesan cheese",
+        "Garlic powder",
+        "Salt",
+        "Pepper"
+      ],
+      "description": "Une de nos recettes les plus populaires de la gastronomie italienne. La pizza Margherita est une recette de pizza simple et élaborée qui est recommandée pour tous les gourmands.",
+      "instructions": [
+        "1-Découper la mozzarella en tranches.",
+        "2-Dans une casserole, mettre l'olive oil et la purée de tomates.",
+        "3-Ajouter la mozzarella et les tranches de tomate.",
+        "4-Ajouter le basil leaves et le pineapple juice.",
+        "5-Ajouter le flour, le cornstarch, les oeufs et le parmesan cheese.",
+        "6-Ajouter le garlic powder, le sel et le poivre.",
+        "7-Poursuivre avec la sauce margherita et faire cuire à feu moyen pendant 20 minutes.",
+        "8-Servir avec des croissants ou des éclairs de fraises"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Tiramisu",
+      "image": "https://assets.afcdn.com/recipe/20161123/1509_w1024h768c1cx1920cy2880.jpg",
+      "username": "Marie",
+      "category": "Desserts",
+      "country": "Italien",
+      "difficulty": "Facile",
+      "price": "Bon marché",
+      "time": 10,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Cream cheese",
+        "Egg yolks",
+        "Vanilla extract",
+        "Sugar",
+        "Cacao powder",
+        "Cocoa butter",
+        "Butter",
+        "Milk",
+        "Flour",
+        "Eggs",
+        "Nuts",
+        "Sugar",
+        "Baking powder",
+        "Salt",
+        "Cinnamon",
+        "Chocolate chips"
+      ],
+      "description": "Tiramisu est une recette de dessert italienne qui est recommandée pour tous les gourmands. Cette version de tiramisu est plus élaborée et présente plus de complexité.",
+      "instructions": [
+        "1-Préparer une grande casserole.",
+        "2-Dans cette casserole, mettre le cacao powder, le chocolate chips et le butter.",
+        "3-Ajouter le lait et la cream cheese.",
+        "4-Ajouter les éclats de yogurt et la vanille extract.",
+        "5-Poursuivre avec le sugar et la baking powder.",
+        "6-Ajouter le cinnamon et le sel.",
+        "7-Poursuivre avec le flour, les oeufs et les nuts.",
+        "8-Ajouter le baking soda et la cinnamon.",
+        "9-Poursuivre avec le milk et faire cuire à feu moyen pendant 30 minutes.",
+        "10-Servir avec des croissants ou des éclairs de fraises."
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Tomates farcies",
+      "image": "https://assets.afcdn.com/recipe/20161128/8069_w1024h768c1cx1872cy2808.jpg",
+      "username": "Emily",
+      "category": "Plats",
+      "country": "Français",
+      "difficulty": "Facile",
+      "price": "Bon marché",
+      "time": 40,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Tomatoes",
+        "Olive oil",
+        "Salt",
+        "Pepper",
+        "Garlic powder",
+        "Onion",
+        "Cumin",
+        "Cinnamon",
+        "Red pepper flakes",
+        "Parsley",
+        "Flour"
+      ],
+      "description": "Tomates farcies est une recette de plat simple et élaborée qui est recommandée pour tous les gourmands. Cette version de tomates farcies est plus élaborée et présente plus de complexité.",
+      "instructions": [
+        "1-Couper les tomates en tranches.",
+        "2-Dans une casserole, mettre l'olive oil.",
+        "3-Ajouter les tomates en tranches",
+        "4-Ajouter le sel, le pepper, le garlic powder, l'onion, le cumin, le cinnamon, le red pepper flakes, la parsley et le flour.",
+        "5-Poursuivre avec le reste des tomates en tranches.",
+        "6-Faire cuire à feu moyen pendant 40 minutes."
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Gratin de pommes de terre fondant",
+      "image": "https://assets.afcdn.com/recipe/20180123/77042_w314h314c1cx2625cy1750cxt0cyt0cxb5250cyb3500.webp",
+      "username": "Lisa",
+      "category": "Plats",
+      "country": "Français",
+      "difficulty": "Facile",
+      "price": "Bon marché",
+      "time": 25,
+      "number_servings": 4,
+      "favorites": "",
+      "ingredients": [
+        "Pommes de terre",
+        "Eau",
+        "Sel",
+        "Poivre",
+        "Paprika",
+        "Cumin",
+        "Olive oil",
+        "Basil leaves",
+        "Flour",
+        "Sugar",
+        "Vanilla extract",
+        "Baking powder"
+      ],
+      "description": "Gratin de pommes de terre fondant est une recette de plat simple et élaborée qui est recommandée pour tous les gourmands. Cette version de gratin de pommes de terre fondant est plus élaborée et présente plus de complexité.",
+      "instructions": [
+        "1-Épluchez et coupez en fines les rondelles de pommes de terre.",
+        "2-Disposez successivement les rondelles de pommes de terre, le gruyère râpé et la crème, salez et poivrez. Recommencez jusqu'en haut du plat pour finir sur une couche de pommes de terre.",
+        "3-Faites cuire à 200°C (Thermostat 6) pendant 50 min puis 5 min à 240°C (Thermostat 8)."
+      ]
+    }
+  ]
+}

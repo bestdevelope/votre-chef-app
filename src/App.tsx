@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header/Header";
-import RecipeList from "./Components/RecipeList/RecipeList";
+// import RecipeList from "./Components/RecipeList/RecipeList";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
+import SearchRecipe from "./Components/SearchRecipe/SearchRecipe";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Header />
-        <RecipeList />
+        <SearchRecipe />
+        {/* <RecipeList /> */}
         <RecipeDetail />
 
         <Routes></Routes>
