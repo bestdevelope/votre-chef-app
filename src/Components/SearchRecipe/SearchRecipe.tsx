@@ -1,53 +1,55 @@
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./SearchRecipe.css";
+import RecipeDetail from "../RecipeDetail/RecipeDetail";
 
-interface Recipe  {
+interface Recipe {
   id: number;
   title: string;
   image: string;
-  time: number;
+  description: string;
 }
 
 const SearchRecipe = () => {
-
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState<Recipe[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
-    if (query.length > 1) {
-      fetch("http://localhost:3000/recipes?q=${query}")
-        .then((response) => response.json())
-        .then((data) => setSuggestions(data));
-    } else {
-      setSuggestions([]);
-    }  
-  }, [query]);
+    fetch("http://localhost:3000/recipes")
+      .then((response) => response.json())
+      .then((data) => setRecipes(data));
+  }, []);
+
+  const filterRecipe = recipes.filter((recipe) =>
+    recipe.title.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
-          <h2>Recherchez une recette</h2>
-          <input
-            type="text"
-            placeholder="Rechercher des recettes..."
-            autoComplete="On"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-       
-        <ul>
-        {suggestions.map((recipe) => (
-          <li key={recipe.id}>
-            <Link to={`/recipe/${recipe.id}`}>
-              <img src={recipe.image} alt={recipe.title} width={100} />
-              {recipe.title}
+      <div className="recipe-list">
+        <h2>Recherchez une recette</h2>
+        <input
+          type="text"
+          placeholder="Rechercher des recettes..."
+          autoComplete="On"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <div>
+          {filterRecipe.map((recipe) => (
+            <Link to={`/recipedetail/${recipe.id}`} key={recipe.id}>
+              <div>
+                <h3>{recipe.title}</h3>
+                <img src={recipe.image} alt={recipe.title} width={300} />
+                <p>{recipe.description}</p>
+                <RecipeDetail/>
+              </div>
             </Link>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchRecipe
-
-
+export default SearchRecipe;

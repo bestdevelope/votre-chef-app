@@ -11,7 +11,22 @@ const Header: React.FC = () => {
         <img src={logo} alt="logo" width={100} />
         <p>Meilleurs Recettes</p>
       </div>
-      {/* login */}
+
+        <ul className="category">
+          <li>
+            <Link to="/entree">Entrées</Link>
+          </li>
+          <li>
+            <Link to="/plats">Plats</Link>
+          </li>
+          <li>
+            <Link to="/desserts">Desserts</Link>
+          </li>
+          <li>
+            <Link to="/favorites">Favoris</Link>
+          </li>
+        </ul>
+
       <div className="nav-login">
         <Link to="/login">
           <button>Connexion</button>
