@@ -1,0 +1,15 @@
+.list-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  list-style: none;
+  margin-right: 10px;
+}
+
+.link-category {
+    color: #515151;
+    text-decoration: none;
+}
