@@ -7,7 +7,7 @@ interface Recipe {
   image: string;
 }
 
-const SearchRecipe = ({ category }) => {
+const SearchRecipe = () => {
   const API_URL = "http://localhost:3000/recipes";
 
   const [query, setQuery] = useState("");
@@ -25,7 +25,7 @@ const SearchRecipe = ({ category }) => {
       }
     };
     (async () => await fetchRecipes())();
-  }, [category]);
+  }, []);
 
   //filter recipe by query : rechercher des recettes
   const filterRecipe = recipes.filter((recipe) =>
@@ -36,7 +36,7 @@ const SearchRecipe = ({ category }) => {
     <div className="container">
       <div className="input-search">
         <h2>Recherchez une recette</h2>
-        <input 
+        <input
           type="text"
           placeholder="Rechercher des recettes..."
           autoComplete="On"
