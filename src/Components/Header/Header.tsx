@@ -14,9 +14,9 @@ const Header: React.FC = () => {
       </div>
 
       <Category
-        categories={categories}
-        category={category}
-        setCategory={setCategory}
+        // categories={categories}
+        // category={category}
+        // setCategory={setCategory}
       />
 
       <div className="nav-login">

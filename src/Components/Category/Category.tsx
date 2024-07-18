@@ -8,26 +8,21 @@ interface Category {
 }
 
 function Category() {
-
-
-  useEffect(() => {
-    const fetchRecipes = async () => {
-      try {
-        const data = await fetch("http://localhost:3000/recipes/category");
-        const recipes = await data.json();
-        setCategory(recipes.category);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    (async () => await fetchRecipes())();
-  }, [params.type]);
+  // useEffect(() => {
+  //   const fetchRecipes = async () => {
+  //     try {
+  //       const data = await fetch("http://localhost:3000/recipes/category");
+  //       const recipes = await data.json();
+  //       setCategory(recipes.category);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  //   (async () => await fetchRecipes())();
+  // }, [params.type]);
 
   return (
     <div className="list-category">
-      <div>
-        <span>{category}</span>
-      </div>
       <div>
         <ul className="list-category">
           {[
