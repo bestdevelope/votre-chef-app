@@ -66,7 +66,7 @@ const SearchRecipe = () => {
                   <img src={recipe.image} alt={recipe.title} width={300} />
                 </Link>
                 <Link to="/favorite">
-                  <button onClick={() => addFavorite(recipe.id)}>
+                  <button className="btn-favorite" onClick={() => addFavorite(recipe.id)}>
                     Ajouter à mes favoris
                   </button>
                 </Link>
