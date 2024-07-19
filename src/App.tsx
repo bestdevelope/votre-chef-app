@@ -12,8 +12,7 @@ function App() {
       <SearchRecipe />
 
       <Routes>
-        
-        <Route path="/detail" element={<RecipeDetail />} />
+        <Route path="/detail/:id" element={<RecipeDetail />} />
 
         {/* <RecipeList /> */}
       </Routes>

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Header from "../Header/Header";
 // import FavoriteButton from ""
 
-interface Recipe {
+interface Details {
   id: number;
   title: string;
   image: string;
@@ -17,33 +18,30 @@ interface Recipe {
 }
 
 const RecipeDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  //
+  const params = useParams();
+  const [details, setDetails] = useState<Details | any>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/recipes/${id}`)
-      .then((response) => response.json())
-      .then((data) => setRecipe(data));
-  }, [id]);
-
-  if (!recipe) {
-    return <div>Loading...</div>;
-  }
+    async function fetchData() {
+      try {
+        const response = await fetch(
+          "http://localhost:3000/recipes" + params.id
+        );
+        const datas = await response.json();
+        if (datas) {
+          setDetails(datas);
+        }
+      } catch (err) {
+        setDetails([]);
+      }
+    }
+    fetchData();
+  }, [params.id]);
 
   return (
     <div>
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt={recipe.title} />
-      <p>Time: {recipe.time} minutes</p>
-      <p>Servings: {recipe.number_servings}</p>
-      <p>Price: {recipe.price}</p>
-      <p>Difficulty: {recipe.difficulty}</p>
-      <p>{recipe.description}</p>
-      <h3>Ingredients:</h3>
-      <p>{recipe.ingredients}</p>
-      <h4>Étapes:</h4>
-      <p>{recipe.instructions}</p>
-      {/* <FavoriteButton recipeId={recipe.id} :> */}
+      <Header />
     </div>
   );
 };
