@@ -62,8 +62,10 @@ const SearchRecipe = () => {
             return (
               <div key={recipe.id} className="recipe">
                 <h4>{recipe.title}</h4>
-                <Link to={`/detail/${recipe.id}`}>
+                <Link to="/detail">
                   <img src={recipe.image} alt={recipe.title} width={300} />
+                </Link>
+                <Link to="/favorite">
                   <button onClick={() => addFavorite(recipe.id)}>
                     Ajouter à mes favoris
                   </button>
