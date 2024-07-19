@@ -33,6 +33,17 @@ const SearchRecipe = () => {
     recipe.title.toLowerCase().includes(query.toLowerCase())
   );
 
+  // ajouter favorite recettes et stocker dans local storage
+  const addFavorite = (id: string) => {
+    const favorite = recipes.find((recipe) => recipe.id === id);
+    if (favorite) {
+      const storedFavorites = localStorage.getItem("favorites");
+      const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+      favorites.push(favorite);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  };
+
   return (
     <div className="container">
       <div className="input-search">
@@ -53,7 +64,9 @@ const SearchRecipe = () => {
                 <h4>{recipe.title}</h4>
                 <Link to={`/detail/${recipe.id}`}>
                   <img src={recipe.image} alt={recipe.title} width={300} />
-                  <p>Voir plus</p>
+                  <button onClick={() => addFavorite(recipe.id)}>
+                    Ajouter à mes favoris
+                  </button>
                 </Link>
               </div>
             );

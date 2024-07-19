@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+
 // interface Recipe {
 //   id: number;
 //   title: string;
@@ -8,13 +8,7 @@
 
 // const RecipeList () => {
 
-//     const [recipes, setRecipes] = useState<Recipe[]>([]);
 
-//     useEffect(() => {
-//         fetch("http://localhost:3000/recipes")
-//        .then((response) => response.json())
-//        .then((data) => setRecipes(data));
-//     }, [])
 
 
 

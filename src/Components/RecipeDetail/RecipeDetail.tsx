@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header/Header";
+
 // import FavoriteButton from ""
 
 interface Details {
@@ -41,7 +41,6 @@ const RecipeDetail = () => {
 
   return (
     <div>
-      <Header />
       <h1>{details.title}</h1>
       <img src={details.image} alt={details.title} />
       <p>Catégorie: {details.category}</p>
@@ -62,6 +61,7 @@ const RecipeDetail = () => {
           <li key={index}>{details.instruction}</li>
         ))}
       </ol> */}
+
     </div>
   );
 };
