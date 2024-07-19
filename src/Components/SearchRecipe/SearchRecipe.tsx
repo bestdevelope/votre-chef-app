@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SearchRecipe.css";
+import { useParams, Link } from "react-router-dom";
 
 interface Recipe {
   id: number;
@@ -12,7 +13,7 @@ const SearchRecipe = () => {
 
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-
+  const params = useParams();
   //fetch db json
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -25,7 +26,7 @@ const SearchRecipe = () => {
       }
     };
     (async () => await fetchRecipes())();
-  }, []);
+  }, [params]);
 
   //filter recipe by query : rechercher des recettes
   const filterRecipe = recipes.filter((recipe) =>
@@ -50,8 +51,10 @@ const SearchRecipe = () => {
             return (
               <div key={recipe.id} className="recipe">
                 <h4>{recipe.title}</h4>
-                <img src={recipe.image} alt={recipe.title} width={300} />
-                <p>Voir plus</p>
+                <Link to={`/detail/${recipe.id}`}>
+                  <img src={recipe.image} alt={recipe.title} width={300} />
+                  <p>Voir plus</p>
+                </Link>
               </div>
             );
           })}

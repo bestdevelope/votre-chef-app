@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
+import Header from "../Header/Header";
 // import FavoriteButton from ""
 
-interface Recipe {
+interface Details {
   id: number;
   title: string;
   image: string;
@@ -17,33 +18,50 @@ interface Recipe {
 }
 
 const RecipeDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  //
+  const { id } = useParams();
+  const [details, setDetails] = useState<Details[]>([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:3000/recipes/${id}`)
-      .then((response) => response.json())
-      .then((data) => setRecipe(data));
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await fetch("http://localhost:3000/recipes/");
+      const data = await response.json();
+      const filterData = data.filter((item: Details) => item.id == id);
+      setDetails(filterData);
+    } catch (error) {
+      console.log(error);
+    }
   }, [id]);
 
-  if (!recipe) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  console.log(details[0]);
 
   return (
     <div>
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt={recipe.title} />
-      <p>Time: {recipe.time} minutes</p>
-      <p>Servings: {recipe.number_servings}</p>
-      <p>Price: {recipe.price}</p>
-      <p>Difficulty: {recipe.difficulty}</p>
-      <p>{recipe.description}</p>
-      <h3>Ingredients:</h3>
-      <p>{recipe.ingredients}</p>
-      <h4>Étapes:</h4>
-      <p>{recipe.instructions}</p>
-      {/* <FavoriteButton recipeId={recipe.id} :> */}
+      <Header />
+      {/* <h1>{details.title}</h1>
+      <img src={details.image} alt={details.title} />
+      <p>Catégorie: {details.category}</p>
+      <p>Difficulté: {details.difficulty}</p>
+      <p>Prix: {details.price}</p>
+      <p>Temps de préparation: {details.time} minutes</p>
+      <p>Nombre de servings: {details.number_servings}</p>
+      <p>Description: {details.description}</p> */}
+      {/* <h2>Ingredients:</h2>
+      <ul>
+        {details.ingredients.map((index) => (
+          <li key={index}>{details.ingredients}</li>
+        ))}
+      </ul>
+      <h2>Instructions:</h2>
+      <ol>
+        {details.instructions.map((index) => (
+          <li key={index}>{details.instruction}</li>
+        ))}
+      </ol> */}
     </div>
   );
 };
