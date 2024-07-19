@@ -26,7 +26,7 @@ const RecipeDetail = () => {
     async function fetchData() {
       try {
         const response = await fetch(
-          "http://localhost:3000/recipes" + params.id
+          "http://localhost:3000/recipes/" + params.id
         );
         const datas = await response.json();
         if (datas) {
