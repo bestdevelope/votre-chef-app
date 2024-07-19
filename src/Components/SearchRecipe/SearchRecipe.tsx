@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./SearchRecipe.css";
+import { Link } from "react-router-dom";
 
 interface Recipe {
   id: number;
@@ -50,8 +51,10 @@ const SearchRecipe = () => {
             return (
               <div key={recipe.id} className="recipe">
                 <h4>{recipe.title}</h4>
+                <Link to="/detail">
                 <img src={recipe.image} alt={recipe.title} width={300} />
-                <p>Voir plus</p>
+                  <p>Voir plus</p>
+                </Link>
               </div>
             );
           })}

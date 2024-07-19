@@ -1,4 +1,4 @@
-import { Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
@@ -8,14 +8,15 @@ import SearchRecipe from "./Components/SearchRecipe/SearchRecipe";
 function App() {
   return (
     <>
+      <Header />
+      <SearchRecipe />
 
-        <Header />
-        <SearchRecipe />
+      <Routes>
+        
+        <Route path="/detail" element={<RecipeDetail />} />
+
         {/* <RecipeList /> */}
-        <RecipeDetail />
-
-        <Routes></Routes>
-     
+      </Routes>
     </>
   );
 }
