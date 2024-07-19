@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
+import FavoriteRecipe from "../FavoriteRecipe/FavoriteRecipe";
 
 // import FavoriteButton from ""
 
@@ -61,7 +62,7 @@ const RecipeDetail = () => {
           <li key={index}>{details.instruction}</li>
         ))}
       </ol> */}
-
+      <FavoriteRecipe />
     </div>
   );
 };
