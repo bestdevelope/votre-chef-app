@@ -22,7 +22,7 @@ const SearchRecipe = () => {
         const listRecipes = await response.json();
         setRecipes(listRecipes);
       } catch (err) {
-        console.error(err);
+        console.error("Failed to fetch recipes:", err);
       }
     };
     fetchRecipes();
@@ -32,7 +32,6 @@ const SearchRecipe = () => {
     recipe.title.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Ajouter aux favoris et stocker dans local storage
   const addFavorite = (id: number) => {
     const favorite = recipes.find((recipe) => recipe.id === id);
     if (favorite) {
