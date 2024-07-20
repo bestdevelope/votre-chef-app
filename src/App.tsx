@@ -4,7 +4,7 @@ import Header from "./Components/Header/Header";
 import SearchRecipe from "./Components/SearchRecipe/SearchRecipe";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
 import FavoriteRecipe from "./Components/FavoriteRecipe/FavoriteRecipe";
-// import { Recipe } from "./Components/types";
+import { Recipe } from "./Components/types";
 // import "./App.css";
 
 // import RecipeList from "./Components/RecipeList/RecipeList";
@@ -23,6 +23,7 @@ function App() {
       <Header />
       <SearchRecipe />
       <Routes>
+        {/* <Route path="/" element={<RecipeList />} /> */}
         <Route path="/detail/:id" element={<RecipeDetail />} />
         <Route path="/favorite/:id" element={<FavoriteRecipe />} />
       </Routes>
