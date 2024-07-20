@@ -4,29 +4,20 @@ import Header from "./Components/Header/Header";
 import SearchRecipe from "./Components/SearchRecipe/SearchRecipe";
 import RecipeDetail from "./Components/RecipeDetail/RecipeDetail";
 import FavoriteRecipe from "./Components/FavoriteRecipe/FavoriteRecipe";
-import { Recipe } from "./Components/types";
-// import "./App.css";
-
-// import RecipeList from "./Components/RecipeList/RecipeList";
+// import Footer from "./Components/Footer/Footer";
+// import LoginSignup from "./Components/LoginSignup/LoginSignup";
 
 function App() {
-  // const [recipes, setRecipes] = useState<Recipe[]>([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3000/recipes")
-  //     .then((response) => response.json())
-  //     .then((data) => setRecipes(data));
-  // }, []);
-
   return (
     <>
       <Header />
       <SearchRecipe />
       <Routes>
-        {/* <Route path="/" element={<RecipeList />} /> */}
+        {/* <Route path="/login" element={<LoginSignup />} /> */}
         <Route path="/detail/:id" element={<RecipeDetail />} />
         <Route path="/favorite/:id" element={<FavoriteRecipe />} />
       </Routes>
+      {/* <Footer /> */}
     </>
   );
 }
