@@ -42,28 +42,29 @@ const RecipeDetail = () => {
 
   return (
     <div>
-      <h1>{details.title}</h1>
-      <img src={details.image} alt={details.title} />
-      <p>Catégorie: {details.category}</p>
-      <p>Difficulté: {details.difficulty}</p>
-      <p>Prix: {details.price}</p>
-      <p>Temps de préparation: {details.time} minutes</p>
-      <p>Nombre de servings: {details.number_servings}</p>
-      <p>Description: {details.description}</p>
-      {/* <h2>Ingredients:</h2>
+      {/* <h1>{details[0].title}</h1>
+      <img src={details[0].image} alt={details[0].title} />
+      <p>Catégorie: {details[0].category}</p>
+      <p>Difficulté: {details[0].difficulty}</p>
+      <p>Prix: {details[0].price}</p>
+      <p>Temps de préparation: {details[0].time} minutes</p>
+      <p>Nombre de servings: {details[0].number_servings}</p>
+      <p>Description: {details[0].description}</p>
+      <h2>Ingredients:</h2>
       <ul>
-        {details.ingredients.map((index) => (
-          <li key={index}>{details.ingredients}</li>
+        {details[0].ingredients.map((index) => (
+          <li key={index}>{details[0].ingredients}</li>
         ))}
       </ul>
       <h2>Instructions:</h2>
       <ol>
-        {details.instructions.map((index) => (
-          <li key={index}>{details.instruction}</li>
+        {details[0].instructions.map((index) => (
+          <li key={index}>{details[0].instruction}</li>
         ))}
-      </ol> */}
-      <button onClick={() => onFavorite(recipe.id)}>Add to Favorites</button>
-      {/* <FavoriteRecipe /> */}
+      </ol>
+      <button onClick={() => onFavorite(details[0].id)}>
+        Add to Favorites
+      </button> */}
     </div>
   );
 };
