@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Category.css";
+import { Recipe } from "../types";
 
 interface Category {
   id: number;
@@ -8,18 +10,19 @@ interface Category {
 }
 
 function Category() {
-  // useEffect(() => {
-  //   const fetchRecipes = async () => {
-  //     try {
-  //       const data = await fetch("http://localhost:3000/recipes/category");
-  //       const recipes = await data.json();
-  //       setCategory(recipes.category);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  //   (async () => await fetchRecipes())();
-  // }, [params.type]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const filterByCategory = (category: string) => {
+    setSelectedCategory(category);
+    if (category === "Favorite") {
+      const storedFavorites = localStorage.getItem("favorites");
+      const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+      setFilteredRecipes(favorites);
+    } else {
+      const results = recipes.filter((recipe) => recipe.category === category);
+      setFilteredRecipes(results);
+    }
+  };
 
   return (
     <div className="list-category">
@@ -52,3 +55,5 @@ function Category() {
 }
 
 export default Category;
+
+

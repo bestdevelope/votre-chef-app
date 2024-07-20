@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../Header/Header";
+import FavoriteRecipe from "../FavoriteRecipe/FavoriteRecipe";
+
 // import FavoriteButton from ""
 
 interface Details {
@@ -41,15 +42,14 @@ const RecipeDetail = () => {
 
   return (
     <div>
-      <Header />
-      {/* <h1>{details.title}</h1>
+      <h1>{details.title}</h1>
       <img src={details.image} alt={details.title} />
       <p>Catégorie: {details.category}</p>
       <p>Difficulté: {details.difficulty}</p>
       <p>Prix: {details.price}</p>
       <p>Temps de préparation: {details.time} minutes</p>
       <p>Nombre de servings: {details.number_servings}</p>
-      <p>Description: {details.description}</p> */}
+      <p>Description: {details.description}</p>
       {/* <h2>Ingredients:</h2>
       <ul>
         {details.ingredients.map((index) => (
@@ -62,6 +62,7 @@ const RecipeDetail = () => {
           <li key={index}>{details.instruction}</li>
         ))}
       </ol> */}
+      <FavoriteRecipe />
     </div>
   );
 };
