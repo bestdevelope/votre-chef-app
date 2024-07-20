@@ -45,7 +45,7 @@ const SearchRecipe = () => {
         />
         <div className="liste-recipe">
           {filterRecipe.map((recipe) => (
-            <Link to={`/recipedetail/${recipe.id}`} key={recipe.id}>
+            <Link to={`/detail/${recipe.id}`} key={recipe.id}>
               <div className="recipe">
                 <h3>{recipe.title}</h3>
                 <img src={recipe.image} alt={recipe.title} width={300} />
