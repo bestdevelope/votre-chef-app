@@ -32,11 +32,24 @@ const SearchRecipe = () => {
     recipe.title.toLowerCase().includes(query.toLowerCase())
   );
 
+  // ajouter favorite recettes et stocker dans local storage
+  const addFavorite = (id: string) => {
+    const favorite = recipes.find((recipe) => recipe.id === id);
+    if (favorite) {
+      const storedFavorites = localStorage.getItem("favorites");
+      const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+      favorites.push(favorite);
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+  };
+
   return (
     <div className="container">
       <div className="recipe-list">
         <h2>Recherchez une recette</h2>
         <input
+          name="name"
+          id=""
           type="text"
           placeholder="Rechercher des recettes..."
           autoComplete="On"
@@ -53,6 +66,18 @@ const SearchRecipe = () => {
               </div>
             </Link>
           ))}
+          <div>
+            <ul>
+              <button
+                className="btn-favorite"
+                onClick={() => {
+                  addFavorite;
+                }}
+              >
+                Add Favorite
+              </button>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -129,14 +154,14 @@ export default SearchRecipe;
 //                 <Link to="/detail">
 //                   <p>Voir plus de détails</p>
 //                 </Link>
-//                 <Link to="/favorite">
-//                   <button
-//                     className="btn-favorite"
-//                     onClick={() => addFavorite(recipe.id)}
-//                   >
-//                     Ajouter à mes favoris
-//                   </button>
-//                 </Link>
+// <Link to="/favorite">
+//   <button
+//     className="btn-favorite"
+//     onClick={() => addFavorite(recipe.id)}
+//   >
+//     Ajouter à mes favoris
+//   </button>
+// </Link>
 //               </div>
 //             );
 //           })}
