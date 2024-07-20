@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./SearchRecipe.css";
+import FavoriteRecipe from "../FavoriteRecipe/FavoriteRecipe";
 // import RecipeDetail from "../RecipeDetail/RecipeDetail";
 
 interface Recipe {
@@ -71,12 +72,13 @@ const SearchRecipe = () => {
               <button
                 className="btn-favorite"
                 onClick={() => {
-                  addFavorite;
+                  addFavorite(recipe.id);
                 }}
               >
                 Add Favorite
               </button>
             </ul>
+            <FavoriteRecipe />
           </div>
         </div>
       </div>

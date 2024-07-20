@@ -62,7 +62,8 @@ const RecipeDetail = () => {
           <li key={index}>{details.instruction}</li>
         ))}
       </ol> */}
-      <FavoriteRecipe />
+      <button onClick={() => onFavorite(recipe.id)}>Add to Favorites</button>
+      {/* <FavoriteRecipe /> */}
     </div>
   );
 };
