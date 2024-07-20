@@ -72,7 +72,7 @@ const SearchRecipe = () => {
               <button
                 className="btn-favorite"
                 onClick={() => {
-                  addFavorite(recipe.id);
+                  {addFavorite}
                 }}
               >
                 Add Favorite

@@ -53,13 +53,13 @@ const RecipeDetail = () => {
       <h2>Ingredients:</h2>
       <ul>
         {details[0].ingredients.map((index) => (
-          <li key={index}>{details[0].ingredients}</li>
+          <li key={index}>{details[0].ingredients[index]}</li>
         ))}
       </ul>
       <h2>Instructions:</h2>
       <ol>
         {details[0].instructions.map((index) => (
-          <li key={index}>{details[0].instruction}</li>
+          <li key={index}>{details[0].instruction[index]}</li>
         ))}
       </ol>
       <button onClick={() => onFavorite(details[0].id)}>
