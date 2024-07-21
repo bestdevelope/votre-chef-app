@@ -59,7 +59,7 @@ const SearchRecipe = () => {
           {filterRecipe.map((recipe) => (
             <div className="recipe" key={recipe.id}>
               <Link to={`/detail/${recipe.id}`}>
-                <h3>{recipe.title}</h3>
+                <h3 className="list-recipe-title">{recipe.title}</h3>
                 <img src={recipe.image} alt={recipe.title} width={300} />
               </Link>
               <button

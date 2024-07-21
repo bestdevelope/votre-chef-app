@@ -21,7 +21,7 @@ const Header: React.FC = () => {
             <Link to="/add-recipe">Ajouter Recette</Link>
           </li>
           <li>
-            <Link to="/favorites">Favoris</Link>
+            <Link to="/favorite/">Favoris</Link>
           </li>
         </ul>
       </nav>
