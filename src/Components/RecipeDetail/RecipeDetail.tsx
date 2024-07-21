@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./RecipeDetail.css";
+// import { Recipe } from "../types";
 
 interface Recipe {
   id: number;
@@ -16,72 +17,76 @@ interface Recipe {
   instructions: string[];
 }
 
-const RecipeDetail = () => {
+const recipeDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const [recipe, setRecipe] = useState<Recipe | null>(null);
+  const [recipeDetail, setrecipeDetail] = useState<Recipe | null>(null);
 
   useEffect(() => {
-    const fetchRecipeDetail = async () => {
+    const fetchrecipeDetail = async () => {
       try {
-        const response = await fetch(http://localhost:3000/recipes/${id});
+        const response = await fetch(`http://localhost:3000/recipes/${id}`);
         const data = await response.json();
-        setRecipe(data);
+        setrecipeDetail(data);
       } catch (err) {
-        console.error("Failed to fetch recipe details:", err);
+        console.error("Failed to fetch recipeDetail:", err);
       }
     };
 
-    fetchRecipeDetail();
+    fetchrecipeDetail();
   }, [id]);
 
   const addFavorite = () => {
-    if (recipe) {
+    if (recipeDetail) {
       try {
         const storedFavorites = localStorage.getItem("favorites");
         const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-        if (!favorites.some((fav: Recipe) => fav.id === recipe.id)) {
-          favorites.push(recipe);
+        if (!favorites.some((fav: Recipe) => fav.id === recipeDetail.id)) {
+          favorites.push(recipeDetail);
           localStorage.setItem("favorites", JSON.stringify(favorites));
-          alert("Recipe added to favorites!");
+          alert("la recette ajouté aux favoris ! ");
         } else {
-          alert("Recipe is already in favorites!");
+          alert("la resette est déjà dans les favoris !");
         }
       } catch (error) {
-        console.error("Failed to add to favorites:", error);
+        console.error("Échec de l'ajout aux favoris:", error);
       }
     }
   };
 
-  if (!recipe) return <div>Loading...</div>;
+  if (!recipeDetail) return <div>Loading...</div>;
 
   return (
     <div className="recipe-detail">
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt={recipe.title} width={500} />
+      <h1>{recipeDetail.title}</h1>
+      <img src={recipeDetail.image} alt={recipeDetail.title} width={500} />
 
       <h2 className="description">Description:</h2>
-      <h4 className="recipe-description">{recipe.description}</h4>
+      <h4 className="recipe-description">{recipeDetail.description}</h4>
       <div className="list-detail">
-        <p>Catégorie: {recipe.category}</p>
-        <p>Difficulté: {recipe.difficulty}</p>
-        <p>Prix: {recipe.price}</p>
-        <p>Temps de préparation: {recipe.time} minutes</p>
-        <p>Nombre de servings: {recipe.number_servings}</p>
+        <p>Catégorie: {recipeDetail.category}</p>
+        <p>Difficulté: {recipeDetail.difficulty}</p>
+        <p>Prix: {recipeDetail.price}</p>
+        <p>Temps de préparation: {recipeDetail.time} minutes</p>
+        <p>Nombre de servings: {recipeDetail.number_servings}</p>
       </div>
       <h2 className="list-ingredients">Ingredients:</h2>
-      {recipe.ingredients.map((ingredient, index) => (
-        <li className="list-text-ingredients" key={index}>{ingredient}</li>
+      {recipeDetail.ingredients.map((ingredient, index) => (
+        <li className="list-text-ingredients" key={index}>
+          {ingredient}
+        </li>
       ))}
       <h2>Instructions:</h2>
-      {recipe.instructions.map((instruction, index) => (
-        <li className="list-text-instruction" key={index}>{instruction}</li>
+      {recipeDetail.instructions.map((instruction, index) => (
+        <li className="list-text-instruction" key={index}>
+          {instruction}
+        </li>
       ))}
       {/* button ajouter au Favoris */}
-      <button onClick={addFavorite}>Ajouter aux Favoris</button>
-
-      {/* button retour à la liste des recettes */}
+      <button className="btn-add-fav" onClick={addFavorite}>
+        Ajouter aux Favoris
+      </button>
     </div>
   );
 };
 
-export default RecipeDetail;
+export default recipeDetail;
