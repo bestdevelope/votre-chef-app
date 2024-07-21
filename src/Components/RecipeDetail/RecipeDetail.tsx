@@ -68,12 +68,15 @@ const RecipeDetail = () => {
         <p>Temps de préparation: {recipe.time} minutes</p>
         <p>Nombre de servings: {recipe.number_servings}</p>
       </div>
-      <h3 className="list-ingredients">Ingredients:</h3>
-      {recipe.ingredients.map((ingredient, index) => (
-        <li className="list-text-ingredients" key={index}>
-          {ingredient}
-        </li>
-      ))}
+
+      <h3>Ingredients:</h3>
+      <div className="list-ingredients">
+        {recipe.ingredients.map((ingredient, index) => (
+          <li className="list-text-ingredients" key={index}>
+            {ingredient}
+          </li>
+        ))}
+      </div>
       <h3>Instructions:</h3>
       {recipe.instructions.map((instruction, index) => (
         <li className="list-text-instruction" key={index}>
@@ -81,9 +84,11 @@ const RecipeDetail = () => {
         </li>
       ))}
       {/* button ajouter au Favoris */}
-      <button className="btn-add-fav" onClick={addFavorite}>
-        Ajouter aux Favoris
-      </button>
+      <div className="btn-fav">
+        <button className="btn-add-fav" onClick={addFavorite}>
+          Ajouter aux Favoris
+        </button>
+      </div>
 
       {/* button retour à la liste des recettes */}
     </div>

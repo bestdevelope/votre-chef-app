@@ -1,6 +1,6 @@
 .recipe-detail {
   max-width: 900px;
-  margin-left: 20rem;
+  margin-left: 15rem;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -70,11 +70,13 @@ h4 {
   color: #2c3e50;
   margin-bottom: 5px;
 }
-
-button {
+.btn-fav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+button {
   width: 30%;
   padding: 12px;
   font-size: 1.1rem;
