@@ -27,7 +27,10 @@ const RecipeDetail = () => {
         const data = await response.json();
         setRecipe(data);
       } catch (err) {
-        console.error("Failed to fetch recipe details:", err);
+        console.error(
+          "Échec de la récupération des détails de la recette",
+          err
+        );
       }
     };
 
@@ -42,12 +45,12 @@ const RecipeDetail = () => {
         if (!favorites.some((fav: Recipe) => fav.id === recipe.id)) {
           favorites.push(recipe);
           localStorage.setItem("favorites", JSON.stringify(favorites));
-          alert("Recipe added to favorites!");
+          alert("Recette ajoutée aux favoris !");
         } else {
-          alert("Recipe is already in favorites!");
+          alert("La recette est déjà dans les favoris !");
         }
       } catch (error) {
-        console.error("Failed to add to favorites:", error);
+        console.error("Échec de l'ajout aux favoris", error);
       }
     }
   };
