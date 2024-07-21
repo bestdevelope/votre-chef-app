@@ -1,10 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
-import FavoriteRecipe from "../FavoriteRecipe/FavoriteRecipe";
+import { useState, useEffect } from "react";
+import "./RecipeDetail.css";
 
-// import FavoriteButton from ""
-
-interface Details {
+interface Recipe {
   id: number;
   title: string;
   image: string;
@@ -19,50 +17,69 @@ interface Details {
 }
 
 const RecipeDetail = () => {
-  //
-  const { id } = useParams();
-  const [details, setDetails] = useState<Details[]>([]);
-
-  const fetchData = useCallback(async () => {
-    try {
-      const response = await fetch("http://localhost:3000/recipes/");
-      const data = await response.json();
-      const filterData = data.filter((item: Details) => item.id == id);
-      setDetails(filterData);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [id]);
+  const { id } = useParams<{ id: string }>();
+  const [recipe, setRecipe] = useState<Recipe | null>(null);
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+    const fetchRecipeDetail = async () => {
+      try {
+        const response = await fetch(http://localhost:3000/recipes/${id});
+        const data = await response.json();
+        setRecipe(data);
+      } catch (err) {
+        console.error("Failed to fetch recipe details:", err);
+      }
+    };
 
-  console.log(details[0]);
+    fetchRecipeDetail();
+  }, [id]);
+
+  const addFavorite = () => {
+    if (recipe) {
+      try {
+        const storedFavorites = localStorage.getItem("favorites");
+        const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
+        if (!favorites.some((fav: Recipe) => fav.id === recipe.id)) {
+          favorites.push(recipe);
+          localStorage.setItem("favorites", JSON.stringify(favorites));
+          alert("Recipe added to favorites!");
+        } else {
+          alert("Recipe is already in favorites!");
+        }
+      } catch (error) {
+        console.error("Failed to add to favorites:", error);
+      }
+    }
+  };
+
+  if (!recipe) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{details.title}</h1>
-      <img src={details.image} alt={details.title} />
-      <p>Catégorie: {details.category}</p>
-      <p>Difficulté: {details.difficulty}</p>
-      <p>Prix: {details.price}</p>
-      <p>Temps de préparation: {details.time} minutes</p>
-      <p>Nombre de servings: {details.number_servings}</p>
-      <p>Description: {details.description}</p>
-      {/* <h2>Ingredients:</h2>
-      <ul>
-        {details.ingredients.map((index) => (
-          <li key={index}>{details.ingredients}</li>
-        ))}
-      </ul>
+    <div className="recipe-detail">
+      <h1>{recipe.title}</h1>
+      <img src={recipe.image} alt={recipe.title} width={500} />
+
+      <h2 className="description">Description:</h2>
+      <h4 className="recipe-description">{recipe.description}</h4>
+      <div className="list-detail">
+        <p>Catégorie: {recipe.category}</p>
+        <p>Difficulté: {recipe.difficulty}</p>
+        <p>Prix: {recipe.price}</p>
+        <p>Temps de préparation: {recipe.time} minutes</p>
+        <p>Nombre de servings: {recipe.number_servings}</p>
+      </div>
+      <h2 className="list-ingredients">Ingredients:</h2>
+      {recipe.ingredients.map((ingredient, index) => (
+        <li className="list-text-ingredients" key={index}>{ingredient}</li>
+      ))}
       <h2>Instructions:</h2>
-      <ol>
-        {details.instructions.map((index) => (
-          <li key={index}>{details.instruction}</li>
-        ))}
-      </ol> */}
-      <FavoriteRecipe />
+      {recipe.instructions.map((instruction, index) => (
+        <li className="list-text-instruction" key={index}>{instruction}</li>
+      ))}
+      {/* button ajouter au Favoris */}
+      <button onClick={addFavorite}>Ajouter aux Favoris</button>
+
+      {/* button retour à la liste des recettes */}
     </div>
   );
 };
