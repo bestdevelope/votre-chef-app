@@ -23,12 +23,13 @@ const FavoriteRecipe: React.FC = () => {
   };
 
   return (
-    <div>
-      <h3>Favorites</h3>
+    <div className="fav-container">
+      <h3 className="fav-titre">Favorites</h3>
       <ul>
         {favorites.map((recipe) => (
           <li key={recipe.id}>
             {recipe.title}
+            <img src={recipe.image} alt={recipe.title} width={300} />
             <button onClick={() => removeFavorite(recipe.id)}>Remove</button>
           </li>
         ))}

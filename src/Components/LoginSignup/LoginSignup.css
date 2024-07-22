@@ -1,14 +1,14 @@
-.container {
+.login-signup-container {
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 30px;
   background: #fff;
   padding-bottom: 30px;
   width: 600px;
 }
 
-.header {
+.login-header {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,15 +1,45 @@
-.list-category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  list-style: none;
-  margin-right: 10px;
+.category-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.link-category {
-    color: #515151;
-    text-decoration: none;
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  width: 250px;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: auto;
+}
+
+.recipe-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: inherit;
 }

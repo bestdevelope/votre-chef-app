@@ -2,14 +2,14 @@ import React from "react";
 import "./Header.css";
 import logo from "../assets/logo-chef.png";
 import { Link } from "react-router-dom";
-// import Category from "../Category/Category";
-// import user_icon from "../assets/user.png";
 
 const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="nav-logo">
-        <img src={logo} alt="logo" width={100} />
+        <Link to="/" className="nav-list">
+          <img src={logo} alt="logo" width={100} />
+        </Link>
         <p>Meilleurs Recettes</p>
       </div>
       <nav>
@@ -22,6 +22,21 @@ const Header: React.FC = () => {
           <li>
             <Link to="/favorite/" className="nav-list">
               Mes Favoris
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Entrées" className="nav-list">
+              Entrées
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Plats" className="nav-list">
+              Plats
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Desserts" className="nav-list">
+              Desserts
             </Link>
           </li>
         </ul>
