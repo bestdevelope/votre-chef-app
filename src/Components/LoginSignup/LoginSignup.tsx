@@ -10,7 +10,6 @@ const LoginSignup = () => {
   const [action, setAction] = useState("Sign Up");
 
   return (
-
     <div className="login-signup-container">
       <div className="login-header">
         <h2>SE CONNECTER</h2>
@@ -20,13 +19,9 @@ const LoginSignup = () => {
         <div className="underline"></div>
       </div>
       <div className="inputs">
-
-        {action === "Sign Up" && (
-
-       
-        </div>
+        {action === "Login" ? (
+          <div></div>
         ) : (
-
           <div className="input">
             <img src={user_icon} alt="user icon" />
             <input type="text" placeholder="Name" />
@@ -47,18 +42,14 @@ const LoginSignup = () => {
       </div>
       <div className="submit-container">
         <div
-
           className={`submit ${action === "Login" ? "gray" : ""}`}
           onClick={() => setAction("Sign Up")}
-
         >
           Sign Up
         </div>
         <div
-
           className={`submit ${action === "Sign Up" ? "gray" : ""}`}
           onClick={() => setAction("Login")}
-
         >
           Login
         </div>

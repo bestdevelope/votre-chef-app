@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./RecipeDetail.css";
 
-
 interface Recipe {
   id: number;
   title: string;
@@ -17,7 +16,7 @@ interface Recipe {
   instructions: string[];
 }
 
-const recipeDetail = () => {
+const RecipeDetail = () => {
   const { id } = useParams<{ id: string }>();
   const [recipeDetail, setrecipeDetail] = useState<Recipe | null>(null);
 
@@ -45,7 +44,7 @@ const recipeDetail = () => {
           localStorage.setItem("favorites", JSON.stringify(favorites));
           alert("la recette ajouté aux favoris ! ");
         } else {
-          alert("la resette est déjà dans les favoris !");
+          alert("la resette est déjà dans les favoris !");
         }
       } catch (error) {
         console.error("Échec de l'ajout aux favoris:", error);
@@ -75,13 +74,13 @@ const recipeDetail = () => {
           {ingredient}
         </li>
       ))}
-       <h2>Instructions:</h2>
+      <h2>Instructions:</h2>
       {recipeDetail.instructions.map((instruction, index) => (
         <li className="list-text-instruction" key={index}>
           {instruction}
         </li>
       ))}
-       {/* button ajouter au Favoris */}
+      {/* button ajouter au Favoris */}
       <button className="btn-add-fav" onClick={addFavorite}>
         Ajouter aux Favoris
       </button>
