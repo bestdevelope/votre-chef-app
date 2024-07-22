@@ -75,16 +75,16 @@ const recipeDetail = () => {
           {ingredient}
         </li>
       ))}
-      <h2>Instructions:</h2>
+       <h2>Instructions:</h2>
       {recipeDetail.instructions.map((instruction, index) => (
-
-      {/* button ajouter au Favoris */}
-
-      <div className="btn-fav">
-        <button className="btn-add-fav" onClick={addFavorite}>
-          Ajouter aux Favoris
-        </button>
-      </div>
+        <li className="list-text-instruction" key={index}>
+          {instruction}
+        </li>
+      ))}
+       {/* button ajouter au Favoris */}
+      <button className="btn-add-fav" onClick={addFavorite}>
+        Ajouter aux Favoris
+      </button>
     </div>
   );
 };
