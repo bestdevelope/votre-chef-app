@@ -1,59 +1,50 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./Category.css";
-import { Recipe } from "../types";
 
-interface Category {
+interface Recipe {
   id: number;
-  name: string;
+  title: string;
+  image: string;
   category: string;
 }
 
-function Category() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+const Category = () => {
+  const { categoryName } = useParams<{ categoryName: string }>();
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
-  const filterByCategory = (category: string) => {
-    setSelectedCategory(category);
-    if (category === "Favorite") {
-      const storedFavorites = localStorage.getItem("favorites");
-      const favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
-      setFilteredRecipes(favorites);
-    } else {
-      const results = recipes.filter((recipe) => recipe.category === category);
-      setFilteredRecipes(results);
-    }
-  };
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/recipes");
+        const data = await response.json();
+        const filteredRecipes = data.filter(
+          (recipe: Recipe) => recipe.category === categoryName
+        );
+        setRecipes(filteredRecipes);
+      } catch (err) {
+        console.error("Failed to fetch recipes:", err);
+      }
+    };
+
+    fetchRecipes();
+  }, [categoryName]);
 
   return (
-    <div className="list-category">
-      <div>
-        <ul className="list-category">
-          {[
-            "All",
-            "Entrées",
-            "Plats",
-            "Desserts",
-            "Français",
-            "Italien",
-            "Asiatique",
-          ].map((category) => {
-            return (
-              <li key={category}>
-                <Link
-                  className="link-category"
-                  to={`./recipes/${category.toLowerCase()}`}
-                >
-                  {category}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+    <div className="category-container">
+      <h1>{categoryName}</h1>
+      <div className="recipe-list">
+        {recipes.map((recipe) => (
+          <div className="recipe-card" key={recipe.id}>
+            <Link to={`/detail/${recipe.id}`}>
+              <img src={recipe.image} alt={recipe.title} />
+              <h3>{recipe.title}</h3>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default Category;
-
-

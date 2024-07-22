@@ -9,7 +9,9 @@ const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="nav-logo">
-        <img src={logo} alt="logo" width={100} />
+        <Link to="/" className="nav-list">
+          <img src={logo} alt="logo" width={100} />
+        </Link>
         <p>Meilleurs Recettes</p>
       </div>
 
@@ -22,7 +24,22 @@ const Header: React.FC = () => {
           </li>
           <li>
             <Link to="/favorite/" className="nav-list">
-              Favoris
+              Mes Favoris
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Entrées" className="nav-list">
+              Entrées
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Plats" className="nav-list">
+              Plats
+            </Link>
+          </li>
+          <li>
+            <Link to="/category/Desserts" className="nav-list">
+              Desserts
             </Link>
           </li>
         </ul>
