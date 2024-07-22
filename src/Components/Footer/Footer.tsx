@@ -1,5 +1,6 @@
 import "./Footer.css";
 
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -63,3 +64,4 @@ export default Footer;
 // }
 
 // export default Footer;
+

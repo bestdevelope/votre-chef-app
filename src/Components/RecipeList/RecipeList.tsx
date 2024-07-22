@@ -1,25 +1,24 @@
+import React from "react";
+import { Recipe } from "../types";
 
-// interface Recipe {
-//   id: number;
-//   title: string;
-//   image: string;
-//   description: string;
-// }
+type Props = {
+  recipes: Recipe[];
+  onSelect: (id: string) => void;
+};
 
-// const RecipeList () => {
+const RecipeList: React.FC<Props> = ({ recipes, onSelect }) => (
+  <ul>
+    {recipes.map((recipe) => (
+      <li
+        key={recipe.id}
+        onClick={() => onSelect(recipe.id)}
+        style={{ cursor: "pointer" }}
+      >
+        <img src={recipe.image} alt={recipe.title} width="100" />
+        <h4>{recipe.title}</h4>
+      </li>
+    ))}
+  </ul>
+);
 
-
-
-
-
-
-//   return (
-//     <div>
-
-
-
-//     </div>
-//   );
-// };
-
-// export default RecipeList;
+export default RecipeList;
