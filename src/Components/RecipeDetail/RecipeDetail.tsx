@@ -81,7 +81,7 @@ const recipeDetail = () => {
           {instruction}
         </li>
       ))}
-      {/* button ajouter au Favoris */}
+     
       <button className="btn-add-fav" onClick={addFavorite}>
         Ajouter aux Favoris
       </button>
