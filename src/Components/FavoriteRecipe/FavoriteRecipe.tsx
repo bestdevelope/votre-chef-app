@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Recipe } from "../types";
 
 type Props = {
-  id: string
+  id: string;
   title: string;
   recipe: Recipe | null;
   onFavorite: (id: string) => void;
@@ -32,7 +32,7 @@ const FavoriteRecipe: React.FC = () => {
           <li key={recipe.id}>
             {recipe.title}
             <img src={recipe.image} alt={recipe.title} width={300} />
-            <button onClick={() => removeFavorite(recipe.id)}>Remove</button>
+            <button onClick={() => removeFavorite(recipe.id)}>Supprimer</button>
           </li>
         ))}
       </ul>
