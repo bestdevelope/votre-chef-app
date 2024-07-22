@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Recipe } from "../types";
 
 type Props = {
+  id: string
+  title: string;
   recipe: Recipe | null;
   onFavorite: (id: string) => void;
 };

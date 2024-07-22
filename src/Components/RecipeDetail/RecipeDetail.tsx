@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./RecipeDetail.css";
-// import { Recipe } from "../types";
+
 
 interface Recipe {
   id: number;
@@ -77,16 +77,16 @@ const recipeDetail = () => {
       ))}
       <h2>Instructions:</h2>
       {recipeDetail.instructions.map((instruction, index) => (
-        <li className="list-text-instruction" key={index}>
-          {instruction}
-        </li>
-      ))}
+
       {/* button ajouter au Favoris */}
-      <button className="btn-add-fav" onClick={addFavorite}>
-        Ajouter aux Favoris
-      </button>
+
+      <div className="btn-fav">
+        <button className="btn-add-fav" onClick={addFavorite}>
+          Ajouter aux Favoris
+        </button>
+      </div>
     </div>
   );
 };
 
-export default recipeDetail;
+export default RecipeDetail;

@@ -1,5 +1,23 @@
 # Projet : Application de Recettes de Cuisine
 
+## Créer une application de recettes en React et TypeScript
+
+#### 1 Initialisation du Projet
+
+<p> pnpm create vite
+nom de projet: votre-chef-app
+react
+typescript
+cd votre-chef-app
+pnpm install
+pnpm run dev
+</p>
+
+#### creation d'un fichier db.json
+
+<p>pnpm install -g json-server
+pnpx json-server -p 3000 -w db.json</p>
+
 ## Description Générale
 
 <p> Cette application permettra aux utilisateurs de rechercher, ajouter et consulter des recettes de
